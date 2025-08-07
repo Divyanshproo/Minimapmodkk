@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "minimapmod",
+  "version": "1.0.0",
+  "name": "Minimap Mod",
+  "description": "A minimap mod for Minecraft",
+  "authors": ["Divyansh"],
+  "entrypoints": {
+    "main": [
+      "com.example.minimapmod.MinimapMod"
+    ],
+    "client": [
+      "com.example.minimapmod.MinimapModClient"
+    ]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.15.7",
+    "fabric": "*",
+    "minecraft": "1.21.4",
+    "java": ">=17",
+    "fabric-api": "0.111.0"
+  }
+}
