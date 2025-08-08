@@ -3,15 +3,13 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.example'
-version = '1.0.0'
-
 repositories {
     maven {
         name = "Fabric"
         url = "https://maven.fabricmc.net/"
     }
     mavenCentral()
+    gradlePluginPortal()
 }
 
 dependencies {
@@ -35,4 +33,5 @@ sourceSets {
         compileClasspath += main.compileClasspath
         runtimeClasspath += main.runtimeClasspath
     }
+
 }
