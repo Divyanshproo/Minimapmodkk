@@ -1,26 +1,18 @@
 plugins {
-    id 'fabric-loom' version '1.6.9'
+    id 'fabric-loom' version '1.11'
     id 'maven-publish'
 }
 
 repositories {
-    // Loom plugin & Fabric repo
-    maven {
-        name = "Fabric"
-        url = "https://maven.fabricmc.net/"
-    }
+    maven { url = 'https://maven.fabricmc.net/' }
     mavenCentral()
-    gradlePluginPortal()
 }
 
-group = 'com.example'
-version = '1.0.0'
-
 dependencies {
-    minecraft "com.mojang:minecraft:1.21.4"
-    mappings "net.fabricmc:yarn:1.21.4+build.1:v2"
-    modImplementation "net.fabricmc:fabric-loader:0.15.7"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:0.111.0+1.21.4"
+    minecraft "com.mojang:minecraft:1.21.7"  // or 1.21.8
+    mappings "net.fabricmc:yarn:1.21.7+build...:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.16.x"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.xyz+1.21.7"
 }
 
 sourceSets {
@@ -55,3 +47,4 @@ processResources {
         expand "version": project.version
     }
 }
+
