@@ -4,6 +4,7 @@ plugins {
 }
 
 repositories {
+    // Loom plugin & Fabric repo
     maven {
         name = "Fabric"
         url = "https://maven.fabricmc.net/"
@@ -11,6 +12,9 @@ repositories {
     mavenCentral()
     gradlePluginPortal()
 }
+
+group = 'com.example'
+version = '1.0.0'
 
 dependencies {
     minecraft "com.mojang:minecraft:1.21.4"
@@ -33,5 +37,21 @@ sourceSets {
         compileClasspath += main.compileClasspath
         runtimeClasspath += main.runtimeClasspath
     }
+}
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+processResources {
+    inputs.property "version", project.version
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
 }
