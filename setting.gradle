@@ -4,10 +4,15 @@ pluginManagement {
             name = "Fabric"
             url = "https://maven.fabricmc.net/"
         }
+        maven {
+            name = "SonatypeSnapshots"
+            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
         gradlePluginPortal()
         mavenCentral()
     }
 }
 
 rootProject.name = "Minimapmodkk"
+
 
